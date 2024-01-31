@@ -1,0 +1,25 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL Analysis Results</title>
+</head>
+<body>
+<h1>URL Analysis Results</h1>
+<ul>
+<li><b>Page Title:</b> {{ analysis_results.page_title }}</li>
+{% for meta_tag in analysis_results.meta_tags %}
+<li><b>Meta Tag:</b> {{ meta_tag.attrs['name'] }} - {{ meta_tag.attrs['content'] }}</li>
+{% endfor %}
+{% for heading in analysis_results.headings %}
+<li><b>Heading:</b> {{ heading.text }}</li>
+{% endfor %}
+</ul>
+</body>
+</html>
+
+
+Please note that the HTML code assumes that the `analysis_results` variable is passed to the `analysis.html` template. You may need to modify the code according to your specific Flask implementation.
